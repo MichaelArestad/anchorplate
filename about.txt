@@ -1,0 +1,5 @@
+Theme name:    AnchorPlate
+Description:   This is a starter to build your own theme with.
+Author name:   Michael Arestad
+Author site:   http://michaelarestad.com
+License:       WTFPL (http://sam.zoy.org/wtfpl/COPYING)

@@ -1,0 +1,14 @@
+form#search {
+	position: relative;
+	background: $bg-color-4;
+	
+	padding: 50px 0;
+}
+form#search input {
+	padding: 8px 12px;
+	color: $color-1;
+	
+	border: none;
+	width: 90%;
+	margin: 0 auto;
+}

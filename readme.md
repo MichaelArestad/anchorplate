@@ -1,0 +1,1 @@
+The goal is to create a theme I can use to quickly build other themes from.

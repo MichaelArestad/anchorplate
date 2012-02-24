@@ -1,0 +1,47 @@
+/* NOTE: Do not edit styl.css directly. */
+
+/* Imported styles */
+@import "mixes"; /* Contains all the variables, mixins and MORE! */
+@import "reset"; /* Contains a sad excuse for a reset */
+@import "global";
+@import "layout";
+
+/* Main Styles */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Helper classes */
+
+/* h5bp.com/q */
+.clearfix:before, .clearfix:after { 
+	content: "";
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+}
+.clearfix {
+	*zoom: 1;
+}
+.hidden {
+	display: none;
+}
+.hide {
+	position: absolute;
+	left: -999em;
+	top: -999em;
+}
+
+/* Print styles. Needed? If so, should they be super condensed to save paper? */

@@ -1,0 +1,105 @@
+/* Variables
+-------------------------------*/
+
+$bg-color-1: #eee;
+$bg-color-2: #fff;
+$bg-color-3: #333;
+$bg-color-4: #ddd;
+
+$color-1: #333 /* body text color */;
+$color-2: #666 /* link color */;
+$color-3: #999 /* hover color */;
+$color-4: red /* visited color */;
+$color-5: #000;
+$color-6: blue;
+
+$normal: normal /* Change these values when using custom fonts */;
+$bold: bold;
+
+$monospace: monospace, serif;
+
+/* Mixins
+-------------------------------*/
+
+@mixin selection($sel-background: #fe57a1, $sel-color: #FFF, $sel-tshadow: none ) {
+	::-moz-selection {
+		background: $sel-background;
+		color: $sel-color;
+		text-shadow: $sel-tshadow;
+	}
+	::selection {
+		background: $sel-background;
+		color: $sel-color;
+		text-shadow: $sel-tshadow;
+	}
+}
+
+@mixin boxSizing($boxsize: border-box) {
+	-moz-box-sizing: $boxsize;
+	box-sizing: $boxsize;
+}
+
+@mixin columns($col-count: 2, $col-gap: 20px, $col-rule-color: #333, $col-rule-style: none, $col-rule-width: 1px){
+	/* Ignored in ie9 and earlier */
+	-webkit-column-count: $col-count;
+	-moz-column-count: $col-count;
+	column-count: $col-count;
+
+	-webkit-column-gap: $col-gap;
+	-moz-column-gap: $col-gap;
+	column-gap: $col-gap;
+
+	-webkit-column-rule-color: $col-rule-color;
+	-moz-column-rule-color: $col-rule-color;
+	column-rule-color: $col-rule-color;
+
+	-webkit-column-rule-style: $col-rule-style;
+	-moz-column-rule-style: $col-rule-style;
+	column-rule-style: $col-rule-style;
+	
+	-webkit-column-rule-width: $col-rule-width;
+	-moz-column-rule-width: $col-rule-width;
+	column-rule-width: $col-rule-width;
+}
+
+@mixin opacity($opa-value: 1){
+	opacity: $opa-value;
+	filter: alpha(opacity=$opa-value*100);
+}
+
+@mixin borderRadius($rad-value: 6px){
+	-webkit-border-radius: $rad-value;
+	-moz-border-radius: $rad-value;
+	border-radius: $rad-value;
+
+	/* Keeps the background color from leaking outside a border */
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+
+@mixin boxShadow($bsVal-1: 0px, $bsVal-2: 0px, $bsVal-3: 0px, $bsVal-4: 0px, $bsVal-5: #FFF){
+
+	-webkit-box-shadow: $bsVal-1, $bsVal-2, $bsVal-3, $bsVal-4, $bsVal-5;
+	-moz-box-shadow: $bsVal-1, $bsVal-2, $bsVal-3, $bsVal-4, $bsVal-5;
+	box-shadow: $bsVal-1, $bsVal-2, $bsVal-3, $bsVal-4, $bsVal-5;
+}
+
+@mixin boxGradient($bGradVal-1: #444,$bGradVal-2: #999){
+	background-color: $bGradVal-1;
+	background-image: -webkit-gradient(linear, left top, left bottom, from($bGradVal-1),to($bGradVal-2));
+	background-image: -webkit-linear-gradient(top, $bGradVal-1, $bGradVal-2);
+	background-image: -moz-linear-gradient(top, $bGradVal-1, $bGradVal-2);
+	background-image: -o-linear-gradient(top, $bGradVal-1, $bGradVal-2);
+	background-image: -ms-linear-gradient(top, $bGradVal-1, $bGradVal-2);
+	background-image: linear-gradient(top, $bGradVal-1, $bGradVal-2);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='$bGradVal-1', EndColorStr='$bGradVal-2');
+}
+
+@mixin transition($tVal-1: all, $tVal-2: 0.3s, $tVal-3: ease, $tval-4: 0){
+	-webkit-transition: $tVal-1 $tVal-2 $tVal-3 $tVal-4;
+	-moz-transition: $tVal-1 $tVal-2 $tVal-3 $tVal-4;
+	-ms-transition: $tVal-1 $tVal-2 $tVal-3 $tVal-4;
+	-o-transition: $tVal-1 $tVal-2 $tVal-3 $tVal-4;
+	transition: $tVal-1 $tVal-2 $tVal-3 $tVal-4;
+}

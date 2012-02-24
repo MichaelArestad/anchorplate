@@ -1,0 +1,204 @@
+/* Global Styles
+-------------------------------*/
+
+body {
+	background: $bg-color-1;
+}
+
+/* Links */
+
+a {
+	color: $color-2;
+}
+a:visited {
+	color: $color-4;
+}
+a:hover {
+	color: $color-3;
+}
+a:focus {
+	outline: thin dotted;
+}
+
+/* Typography */
+
+abbr[title] {
+	border-bottom: 1px dotted;
+}
+b, strong {
+	font-weight: $bold;
+}
+blockquote {
+	margin: 1em;
+}
+dfn {
+	font-style: italic;
+}
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid $color-1;
+	margin: 1 em 0;
+	padding: 0;
+}
+ins {
+	background: $bg-color-2;
+	color: $color-5;
+	text-decoration: none;
+}
+mark {
+	background: #ff0;
+	color: $color-5;
+	font-style: italic;
+	font-weight: $bold;
+}
+/* h5bp.com/j */
+pre, code, kbd, samp { 
+	font-family: $monospace; 
+	font-size: 1em; 
+}
+pre {
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+q {
+	quotes: none;
+}
+q:before, q:after {
+	content: "";
+	content: none;
+}
+small {
+	font-size: 85%;
+}
+/* h5bp.com/k */
+sub, sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	top: -0.5em;
+}
+sub {
+	bottom: -0.25em;
+}
+
+/* Lists */
+
+ul, ol {
+	margin: 1em;
+	padding: 0 0 0 40px;
+}
+dd {
+	margin: 0 0 0 40px;
+}
+nav ul, nav ol {
+	list-style: none;
+	list-style-image: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* Images */
+
+/* h5bp.com/d h5bp.com/i/440 */
+img {
+	border: 0;
+	-ms-interpolation-mode: bicubic;
+	vertical-align: middle;
+}
+svg:not(:root) {
+	overflow: hidden;
+}
+
+/* Figures */
+
+figure {
+	margin: 0;
+}
+
+/* Forms */
+
+form {
+	margin: 0;
+}
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+label {
+	cursor: pointer;
+}
+legend {
+	border: 0;
+	*margin-left: -7px;
+	padding: 0;
+	white-space: normal;
+}
+button, input, select, textarea {
+	font-size: 100%;
+	margin: 0;
+	vertical-align: baseline;
+	*vertical-align: middle;
+}
+button, input {
+	line-height: normal;
+}
+button, input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	cursor: pointer;
+	-webkit-appearance: button;
+	*overflow: visible;
+}
+button[disabled],
+input[disabled] { 
+	cursor: default;
+}
+input[type="checkbox"],
+input[type="radio"] {
+	box-sizing: border-box;
+	padding: 0;
+	*width: 13px;
+	*height: 13px;
+}
+input[type="search"] {
+	-webkit-appearance: textfield;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+	-webkit-appearance: none;
+}
+/* h5bp.com/l */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+textarea {
+	overflow: auto;
+	vertical-align: top;
+	resize: vertical;
+}
+input:valid, textarea:valid {  }
+input:invalid, textarea:invalid { background-color: $bg-color-3; }
+
+/* Tables */
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+td {
+	vertical-align: top;
+}
+
+/* Going to add Chrome Frame at some point */

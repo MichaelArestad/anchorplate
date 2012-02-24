@@ -1,0 +1,42 @@
+/* This is a combination of HTML5 Boilerplate, my preferences, and Anchor's reset styles. h5pb.com/css anchorcms.com 
+
+It is a work in progress. Suggestions and changes are welcome. -Michael Arestad */
+
+
+* { 
+	@include boxSizing();
+	margin: 0;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+ }
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { 
+	display: block;
+}
+audio, canvas, video {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+audio:not([controls]) {
+	display: none;
+}
+[hidden] {
+	display: none;
+}
+/* h5bp.com/g */
+html {
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+html, button, input, select, textarea {
+	font-family: sans-serif;
+	color: $color-1;
+}
+body {
+	margin: 0;
+	font-size: 1em;
+	line-height: 1.4;
+}
+/* h5bp.com/i */
+@include selection();
