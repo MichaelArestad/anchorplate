@@ -1,46 +1,83 @@
-/* Variables
--------------------------------*/
 
-$bg-color-1: #eee;
+
+$bg-color-1: #efefef;
 $bg-color-2: #fff;
 $bg-color-3: #333;
-$bg-color-4: #ddd;
+$bg-color-4: #dfdfdf;
 
-$color-1: #333 /* body text color */;
-$color-2: #666 /* link color */;
-$color-3: #999 /* hover color */;
-$color-4: red /* visited color */;
-$color-5: #000;
-$color-6: blue;
+$color-1: #2b2b2b; // body text color
+$color-2: #666;
+$color-3: #999;
+$color-4: #ff0; // yellow highlight color
 
-$normal: normal /* Change these values when using custom fonts */;
+$a-color-1: #1961e6; // link color
+$a-color-2: #132949; // hover color
+$a-color-3: #8fa3c6; // visited color
+
+$normal: normal; // Change these values when using custom fonts
 $bold: bold;
 
 $monospace: monospace, serif;
+$serif: serif;
+$sans: sans-serif;
 
-/* Mixins
--------------------------------*/
-
-@mixin selection($sel-background: #fe57a1, $sel-color: #FFF, $sel-tshadow: none ) {
-	::-moz-selection {
-		background: $sel-background;
-		color: $sel-color;
-		text-shadow: $sel-tshadow;
-	}
-	::selection {
-		background: $sel-background;
-		color: $sel-color;
-		text-shadow: $sel-tshadow;
-	}
+@mixin border($width: 1px, $style: solid, $color: $color-1 ){
+	border: $width $style $color;
 }
 
-@mixin boxSizing($boxsize: border-box) {
-	-moz-box-sizing: $boxsize;
-	box-sizing: $boxsize;
+@mixin borderSide($side: top, $width: 1px, $style: solid, $color: $color-1){
+	border-#{$side}: $width $style $color;
+}
+
+@mixin borderRadius($radius: 6px){
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+
+// Keeps the background color from leaking outside a border (Deserving of its own mixin? Hrmmmmm)
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+
+@mixin borderRadiusSide($leftRight, $topBottom, $radius: 6px){
+	-webkit-border-#{$topBottom}-#{$leftRight}-radius: $radius;
+	-moz-border-radius-#{$topBottom}#{$leftRight}: $radius;
+	border-#{$topBottom}-#{$leftRight}-radius: $radius;
+
+// Keeps the background color from leaking outside a border (Deserving of its own mixin? Hrmmmmm)
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+
+@mixin boxGradient($start: #444,$end: #999){
+	background-color: $start;
+	background-image: -webkit-gradient(linear, left top, left bottom, from($start),to($end));
+	background-image: -webkit-linear-gradient(top, $start, $end);
+	background-image: -moz-linear-gradient(top, $start, $end);
+	background-image: -o-linear-gradient(top, $start, $end);
+	background-image: -ms-linear-gradient(top, $start, $end);
+	background-image: linear-gradient(top, $start, $end);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='$start', EndColorStr='$end');
+}
+
+@mixin boxShadow($x-offset: 0px, $y-offset: 0px, $blur: 0px, $spread: 0px, $color: #FFF){
+
+	-webkit-box-shadow: $x-offset, $y-offset, $blur, $spread, $color;
+	-moz-box-shadow: $x-offset, $y-offset, $blur, $spread, $color;
+	box-shadow: $x-offset, $y-offset, $blur, $spread, $color;
+}
+
+@mixin boxSizing($box: border-box) {
+	// Paul Irish box sizing
+	-webkit-box-sizing: $box;
+	-moz-box-sizing: $box;
+	box-sizing: $box;
 }
 
 @mixin columns($col-count: 2, $col-gap: 20px, $col-rule-color: #333, $col-rule-style: none, $col-rule-width: 1px){
-	/* Ignored in ie9 and earlier */
+	// Ignored in ie9 and earlier
 	-webkit-column-count: $col-count;
 	-moz-column-count: $col-count;
 	column-count: $col-count;
@@ -62,44 +99,29 @@ $monospace: monospace, serif;
 	column-rule-width: $col-rule-width;
 }
 
-@mixin opacity($opa-value: 1){
-	opacity: $opa-value;
-	filter: alpha(opacity=$opa-value*100);
+@mixin opacity($opacity: 1){
+	opacity: $opacity;
+	filter: alpha(opacity=$opacity*100);
 }
 
-@mixin borderRadius($rad-value: 6px){
-	-webkit-border-radius: $rad-value;
-	-moz-border-radius: $rad-value;
-	border-radius: $rad-value;
-
-	/* Keeps the background color from leaking outside a border */
-	-moz-background-clip: padding;
-	-webkit-background-clip: padding-box;
-	background-clip: padding-box;
+@mixin selection($background: #fe57a1, $color: #FFF, $text-shadow: none ) {
+	// h5bp.com/i
+	::-moz-selection {
+		background: $background;
+		color: $color;
+		text-shadow: $text-shadow;
+	}
+	::selection {
+		background: $background;
+		color: $color;
+		text-shadow: $text-shadow;
+	}
 }
 
-@mixin boxShadow($bsVal-1: 0px, $bsVal-2: 0px, $bsVal-3: 0px, $bsVal-4: 0px, $bsVal-5: #FFF){
-
-	-webkit-box-shadow: $bsVal-1, $bsVal-2, $bsVal-3, $bsVal-4, $bsVal-5;
-	-moz-box-shadow: $bsVal-1, $bsVal-2, $bsVal-3, $bsVal-4, $bsVal-5;
-	box-shadow: $bsVal-1, $bsVal-2, $bsVal-3, $bsVal-4, $bsVal-5;
-}
-
-@mixin boxGradient($bGradVal-1: #444,$bGradVal-2: #999){
-	background-color: $bGradVal-1;
-	background-image: -webkit-gradient(linear, left top, left bottom, from($bGradVal-1),to($bGradVal-2));
-	background-image: -webkit-linear-gradient(top, $bGradVal-1, $bGradVal-2);
-	background-image: -moz-linear-gradient(top, $bGradVal-1, $bGradVal-2);
-	background-image: -o-linear-gradient(top, $bGradVal-1, $bGradVal-2);
-	background-image: -ms-linear-gradient(top, $bGradVal-1, $bGradVal-2);
-	background-image: linear-gradient(top, $bGradVal-1, $bGradVal-2);
-	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='$bGradVal-1', EndColorStr='$bGradVal-2');
-}
-
-@mixin transition($tVal-1: all, $tVal-2: 0.3s, $tVal-3: ease, $tval-4: 0){
-	-webkit-transition: $tVal-1 $tVal-2 $tVal-3 $tVal-4;
-	-moz-transition: $tVal-1 $tVal-2 $tVal-3 $tVal-4;
-	-ms-transition: $tVal-1 $tVal-2 $tVal-3 $tVal-4;
-	-o-transition: $tVal-1 $tVal-2 $tVal-3 $tVal-4;
-	transition: $tVal-1 $tVal-2 $tVal-3 $tVal-4;
+@mixin transition($property: all, $duration: 0.3s, $timing: ease, $delay: 0){
+	-webkit-transition: $property $duration $timing $delay;
+	-moz-transition: $property $duration $timing $delay;
+	-ms-transition: $property $duration $timing $delay;
+	-o-transition: $property $duration $timing $delay;
+	transition: $property $duration $timing $delay;
 }
