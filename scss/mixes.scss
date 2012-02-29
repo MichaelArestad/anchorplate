@@ -23,7 +23,7 @@ $bold: bold;
 $monospace: monospace, serif;
 $serif: serif;
 $sans: sans-serif;
-$symbol: 'ModernPictogramsNormal', Arial, sans-serif;
+$symbol: 'FontomasCustomRegular', Arial, sans-serif;
 
 
 
@@ -132,14 +132,15 @@ $symbol: 'ModernPictogramsNormal', Arial, sans-serif;
 	transition: $property $duration $timing $delay;
 }
 
+// There has to be a better place for this
 @font-face {
-	//There has to be a better place to put this
-    font-family: 'ModernPictogramsNormal';
-    src: url('../f/modernpics-webfont.eot');
-    src: url('../f/modernpics-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../f/modernpics-webfont.woff') format('woff'),
-         url('../f/modernpics-webfont.ttf') format('truetype'),
-         url('../f/modernpics-webfont.svg#ModernPictogramsNormal') format('svg');
+    font-family: 'FontomasCustomRegular';
+    src: url('../fonts/search-webfont.eot');
+    src: url('../fonts/search-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/search-webfont.woff') format('woff'),
+         url('../fonts/search-webfont.ttf') format('truetype'),
+         url('../fonts/search-webfont.svg#FontomasCustomRegular') format('svg');
     font-weight: normal;
     font-style: normal;
+
 }

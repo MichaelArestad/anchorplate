@@ -1,8 +1,8 @@
 /* NOTE: Do not edit style.css directly. Edit the .scss instead! */
 @font-face {
-  font-family: 'ModernPictogramsNormal';
-  src: url("../f/modernpics-webfont.eot");
-  src: url("../f/modernpics-webfont.eot?#iefix") format("embedded-opentype"), url("../f/modernpics-webfont.woff") format("woff"), url("../f/modernpics-webfont.ttf") format("truetype"), url("../f/modernpics-webfont.svg#ModernPictogramsNormal") format("svg");
+  font-family: 'FontomasCustomRegular';
+  src: url("../fonts/search-webfont.eot");
+  src: url("../fonts/search-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/search-webfont.woff") format("woff"), url("../fonts/search-webfont.ttf") format("truetype"), url("../fonts/search-webfont.svg#FontomasCustomRegular") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -277,9 +277,10 @@ span#search {
     left: 0;
     width: 25px;
     height: 22px;
-    font-family: "ModernPictogramsNormal", Arial, sans-serif;
-    font-size: 22px;
+    font-family: "FontomasCustomRegular", Arial, sans-serif;
+    font-size: 16px;
     line-height: 22px;
+    color: #999999;
     text-indent: 0;
     text-align: center; }
 span#search.close:before {
@@ -312,7 +313,7 @@ ul {
   width: 24px;
   height: 22px;
   text-indent: -9999px;
-  background: url(../i/attribution.gif); }
+  background: url(../images/attribution.gif); }
 
 .clearfix:before, .clearfix:after {
   content: "";

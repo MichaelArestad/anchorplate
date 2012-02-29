@@ -47,8 +47,9 @@ span {
 			width: 25px;
 			height: 22px;
 			font-family: $symbol;
-			font-size: 22px;
+			font-size: 16px;
 			line-height: 22px;
+			color: $color-3;
 			text-indent: 0;
 			text-align: center;
 		}
@@ -100,6 +101,6 @@ ul {
 		width: 24px;
 		height: 22px;
 		text-indent: -9999px;
-		background: url(../i/attribution.gif); //Set sail!
+		background: url(../images/attribution.gif); //Set sail!
 	}
 }
