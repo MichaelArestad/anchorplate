@@ -1,4 +1,11 @@
 /* NOTE: Do not edit style.css directly. Edit the .scss instead! */
+@font-face {
+  font-family: 'ModernPictogramsNormal';
+  src: url("../f/modernpics-webfont.eot");
+  src: url("../f/modernpics-webfont.eot?#iefix") format("embedded-opentype"), url("../f/modernpics-webfont.woff") format("woff"), url("../f/modernpics-webfont.ttf") format("truetype"), url("../f/modernpics-webfont.svg#ModernPictogramsNormal") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -256,9 +263,27 @@ form#search {
       #main ul li a {
         font-size: 13px; }
 
-img#search {
+span#search {
+  cursor: pointer;
   display: inline-block;
-  cursor: pointer; }
+  position: relative;
+  text-indent: -99999px;
+  width: 25px;
+  height: 22px; }
+  span#search:before {
+    content: "s";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 22px;
+    font-family: "ModernPictogramsNormal", Arial, sans-serif;
+    font-size: 22px;
+    line-height: 22px;
+    text-indent: 0;
+    text-align: center; }
+span#search.close:before {
+  content: "x"; }
 
 ul {
   margin: 0;

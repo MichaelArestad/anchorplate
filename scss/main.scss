@@ -31,11 +31,32 @@ form#search {
 		}
 	}
 }
-img#search {
-	display: inline-block;
-	cursor: pointer;
+span {
+	&#search {
+		cursor: pointer;
+		display: inline-block;
+		position: relative;
+		text-indent: -99999px;
+		width: 25px;
+		height: 22px;
+		&:before {
+			content: "s";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 25px;
+			height: 22px;
+			font-family: $symbol;
+			font-size: 22px;
+			line-height: 22px;
+			text-indent: 0;
+			text-align: center;
+		}
+	}
+	&#search.close:before{
+		content: "x"
+	}
 }
-
 
 // =Content
 ul {
