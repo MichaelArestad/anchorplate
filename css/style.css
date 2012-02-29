@@ -1,4 +1,4 @@
-/* NOTE: Do not edit styl.css directly. */
+/* NOTE: Do not edit style.css directly. */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -35,8 +35,6 @@ body {
   font-size: 1em;
   line-height: 1.4; }
 
-/* Global Styles
--------------------------------*/
 ::-moz-selection {
   background: #fe57a1;
   color: white;
@@ -51,7 +49,6 @@ body {
   background: #efefef;
   overflow-x: hidden; }
 
-/* Links */
 a {
   color: #1961e6; }
 
@@ -74,7 +71,6 @@ a:focus {
   -o-transition: color 0.2s ease 0;
   transition: color 0.2s ease 0; }
 
-/* Typography */
 abbr[title] {
   border-bottom: 1px dotted #2b2b2b; }
 
@@ -105,7 +101,6 @@ mark {
   color: #2b2b2b;
   font-style: italic; }
 
-/* h5bp.com/j */
 pre, code, kbd, samp {
   font-family: monospace, serif;
   font-size: 1em; }
@@ -137,7 +132,6 @@ sup {
 sub {
   bottom: -0.25em; }
 
-/* Lists */
 ul, ol {
   margin: 1em;
   padding: 0 0 0 20px; }
@@ -154,7 +148,6 @@ nav ul, nav ol {
   margin: 0;
   padding: 0; }
 
-/* Images */
 img {
   border: 0;
   -ms-interpolation-mode: bicubic;
@@ -163,11 +156,9 @@ img {
 svg:not(:root) {
   overflow: hidden; }
 
-/* Figures */
 figure {
   margin: 0; }
 
-/* Forms */
 form {
   margin: 0; }
 
@@ -224,6 +215,9 @@ input::-moz-focus-inner {
   border: 0;
   padding: 0; }
 
+button {
+  padding: 8px 16px; }
+
 textarea {
   overflow: auto;
   vertical-align: top;
@@ -232,7 +226,6 @@ textarea {
 input:invalid, textarea:invalid {
   background-color: #333333; }
 
-/* Tables */
 table {
   border-collapse: collapse;
   border-spacing: 0; }
@@ -290,7 +283,6 @@ ul {
     #bottom ul li a {
       font-size: 13px; }
 
-/* Helper classes */
 .clearfix:before, .clearfix:after {
   content: "";
   display: table; }

@@ -1,4 +1,4 @@
-// Search Form
+// =Search Form
 form#search {
 	position: relative;
 	background: $bg-color-4;
@@ -16,7 +16,7 @@ form#search {
 }
 
 
-// Main Navigation
+// =Main Navigation
 #main {
 	display: inline-block;
 	 
@@ -36,8 +36,8 @@ img#search {
 	cursor: pointer;
 }
 
-//Content
 
+// =Content
 ul {
 	margin: 0;
 	padding: 0;
@@ -59,7 +59,8 @@ ul {
 	}
 }
 
-// Footer
+
+// =Footer
 #bottom {
 	ul {
 		list-style: none;

@@ -1,32 +1,10 @@
-/* NOTE: Do not edit styl.css directly. */
+/* NOTE: Do not edit style.css directly. */
 
 // Imported styles
 @import "mixes"; // Contains all the variables, mixins and MORE!
 @import "reset"; // Contains a sad excuse for a reset
-@import "global";
-@import "layout";
-
-
-/* Helper classes */
-
-// h5bp.com/q
-.clearfix:before, .clearfix:after { 
-	content: "";
-	display: table;
-}
-.clearfix:after {
-	clear: both;
-}
-.clearfix {
-	*zoom: 1;
-}
-.hidden {
-	display: none;
-}
-.hide {
-	position: absolute;
-	left: -999em;
-	top: -999em;
-}
-
+@import "global"; // Contains all the initial settings and default styling
+@import "main"; // Main styles go here
+//Add any other sections here: Widgets, Modules, Patterns, etc.
+@import "helper"
 // Print styles. Needed? If so, should they be super condensed?

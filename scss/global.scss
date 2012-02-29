@@ -1,16 +1,12 @@
-/* Global Styles
--------------------------------*/
-
 @include selection();
-
 body {
 	background: $bg-color-1;
 	// I'm not sure this is needed. It is a band-aid for a slight scroll issue.
 	overflow-x: hidden;
 }
 
-/* Links */
 
+// =Links
 a {
 	color: $a-color-1;
 }
@@ -31,8 +27,8 @@ a:focus {
 	@include transition(color, .2s)
 }
 
-/* Typography */
 
+// =Typography
 abbr[title] {
 	@include borderSide(bottom, 1px, dotted);
 }
@@ -63,7 +59,7 @@ mark {
 	color: $color-1;
 	font-style: italic;
 }
-/* h5bp.com/j */
+// h5bp.com/j
 pre, code, kbd, samp { 
 	font-family: $monospace; 
 	font-size: 1em; 
@@ -97,8 +93,8 @@ sub {
 	bottom: -0.25em;
 }
 
-/* Lists */
 
+// =Lists
 ul, ol {
 	margin: 1em;
 	padding: 0 0 0 20px;
@@ -116,8 +112,8 @@ nav ul, nav ol {
 	padding: 0;
 }
 
-/* Images */
 
+// =Images 
 // h5bp.com/d h5bp.com/i/440
 img {
 	border: 0;
@@ -128,14 +124,14 @@ svg:not(:root) {
 	overflow: hidden;
 }
 
-/* Figures */
 
+// =Figures
 figure {
 	margin: 0;
 }
 
-/* Forms */
 
+// =Forms 
 form {
 	margin: 0;
 }
@@ -193,6 +189,9 @@ input::-moz-focus-inner {
 	border: 0;
 	padding: 0;
 }
+button {
+	padding: 8px 16px;
+}
 textarea {
 	overflow: auto;
 	vertical-align: top;
@@ -201,8 +200,8 @@ textarea {
 input:valid, textarea:valid {  }
 input:invalid, textarea:invalid { background-color: $bg-color-3; }
 
-/* Tables */
 
+// =Tables
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -211,4 +210,4 @@ td {
 	vertical-align: top;
 }
 
-// Going to add Chrome Frame at some point
+// Chrome Frame needed?

@@ -4,6 +4,8 @@
 
     <p>Unfortunately, the page at <code><?php echo current_url(); ?></code> 
     can't be found, but don't give up hope yet! You can always try going back to 
-    the homepage, or searching.</p>
+    the <a href="<?php echo base_url(); ?>">homepage</a>, or
+    <!-- Need to make 'searching' activate search -->
+    searching.</p>
 </section>
 

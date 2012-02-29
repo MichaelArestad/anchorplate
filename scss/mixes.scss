@@ -1,6 +1,6 @@
 
 
-$bg-color-1: #efefef;
+$bg-color-1: #efefef; // Background colors or images
 $bg-color-2: #fff;
 $bg-color-3: #333;
 $bg-color-4: #dfdfdf;
@@ -13,6 +13,9 @@ $color-4: #ff0; // yellow highlight color
 $a-color-1: #1961e6; // link color
 $a-color-2: #132949; // hover color
 $a-color-3: #8fa3c6; // visited color
+
+$s-color-1: #fe57a1; //Selection background color
+$s-color-2: #FFF; //Selection text color
 
 $normal: normal; // Change these values when using custom fonts
 $bold: bold;
@@ -51,7 +54,7 @@ $sans: sans-serif;
 	background-clip: padding-box;
 }
 
-@mixin boxGradient($start: #444,$end: #999){
+@mixin boxGradient($start: $bg-color-1,$end: $bg-color-4){
 	background-color: $start;
 	background-image: -webkit-gradient(linear, left top, left bottom, from($start),to($end));
 	background-image: -webkit-linear-gradient(top, $start, $end);
@@ -76,7 +79,7 @@ $sans: sans-serif;
 	box-sizing: $box;
 }
 
-@mixin columns($col-count: 2, $col-gap: 20px, $col-rule-color: #333, $col-rule-style: none, $col-rule-width: 1px){
+@mixin columns($col-count: 2, $col-gap: 20px, $col-rule-color: $color-1, $col-rule-style: none, $col-rule-width: 1px){
 	// Ignored in ie9 and earlier
 	-webkit-column-count: $col-count;
 	-moz-column-count: $col-count;
@@ -104,7 +107,7 @@ $sans: sans-serif;
 	filter: alpha(opacity=$opacity*100);
 }
 
-@mixin selection($background: #fe57a1, $color: #FFF, $text-shadow: none ) {
+@mixin selection($background: $s-color-1, $color: $s-color-2, $text-shadow: none ) {
 	// h5bp.com/i
 	::-moz-selection {
 		background: $background;
