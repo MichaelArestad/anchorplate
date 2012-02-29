@@ -26,21 +26,21 @@ $(function() {
 	var clicked = 1,
 		marginTop = search.css('margin-top');
 	
-	header.append('<img src="' + base + 'img/search.gif" id="search">').children('#search').click(function() {
+	header.append('<img src="' + base + 'i/search.gif" id="search">').children('#search').click(function() {
 		
 		//  Move the
 		search.animate({marginTop: clicked % 2 === 0 ? marginTop : 0});
 		
 		if(clicked % 2 === 0) {
 			$(this).animate({opacity: 0}, 200, function() {
-				$(this).attr('src', base + 'img/search.gif').animate({opacity: 1}, 200);
+				$(this).attr('src', base + 'i/search.gif').animate({opacity: 1}, 200);
 			});
 			
 			search.animate({marginTop: marginTop});
 		} else {
 		
 			$(this).animate({opacity: 0}, 200, function() {
-				$(this).attr('src', base + 'img/close.gif').animate({opacity: 1}, 200);
+				$(this).attr('src', base + 'i/close.gif').animate({opacity: 1}, 200);
 			});
 		
 			search.animate({marginTop: 0});

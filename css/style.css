@@ -282,6 +282,12 @@ ul {
     display: inline-block; }
     #bottom ul li a {
       font-size: 13px; }
+#bottom #attribution {
+  display: block;
+  width: 24px;
+  height: 22px;
+  text-indent: -9999px;
+  background: url(../i/attribution.gif); }
 
 .clearfix:before, .clearfix:after {
   content: "";
