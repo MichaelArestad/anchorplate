@@ -70,9 +70,9 @@ $symbol: 'FontomasCustomRegular', Arial, sans-serif;
 
 @mixin boxShadow($x-offset: 0px, $y-offset: 0px, $blur: 0px, $spread: 0px, $color: #FFF){
 
-	-webkit-box-shadow: $x-offset, $y-offset, $blur, $spread, $color;
-	-moz-box-shadow: $x-offset, $y-offset, $blur, $spread, $color;
-	box-shadow: $x-offset, $y-offset, $blur, $spread, $color;
+	-webkit-box-shadow: $x-offset $y-offset $blur $spread $color;
+	-moz-box-shadow: $x-offset $y-offset $blur $spread $color;
+	box-shadow: $x-offset $y-offset $blur $spread $color;
 }
 
 @mixin boxSizing($box: border-box) {
