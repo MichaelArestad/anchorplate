@@ -26,7 +26,7 @@ $(function() {
 	var clicked = 1,
 		marginTop = search.css('margin-top');
 	
-	header.append('<span id="search">Search</span>').children('#search').click(function() {
+	header.append('<span id="s">Search</span>').children('#s').click(function() {
 		
 		//  Move the
 		search.animate({marginTop: clicked % 2 === 0 ? marginTop : 0});
