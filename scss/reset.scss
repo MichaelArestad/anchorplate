@@ -3,7 +3,7 @@
 
 
 * { 
-	@include boxSizing();
+	@include box-sizing();
 	margin: 0;
 	padding: 0;
 	-webkit-font-smoothing: antialiased;
@@ -24,17 +24,15 @@ audio:not([controls]) {
 }
 // h5bp.com/g
 html {
-	// Should 'font-size' be last?
-	font-size: 100%;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
+	font-size: 100%;
 }
 html, button, input, select, textarea {
 	font-family: $sans;
 	color: $color-1;
 }
 body {
-	margin: 0;
 	font-size: 1em;
 	line-height: 1.4;
 }

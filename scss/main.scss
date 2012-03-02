@@ -1,17 +1,14 @@
 // =Search Form
 form#search {
-	position: relative;
 	background: $bg-color-4;
 	padding: 18px 0;
-	text-align: center;
 
 	input{
-		padding: 8px 12px;
+		padding: 8px 15px;
+		width: 100%;
 		color: $color-1;
 		border: none;
-		width: 100%;
-		margin: 0 auto;
-		text-align: left;
+		outline: none;
 	}
 }
 
@@ -21,10 +18,12 @@ form#search {
 	display: inline-block;
 	 
 	ul {
-		display: inline-block;
+		@extend #main;
 		font-size: 0;
+
 		li {
-			display: inline-block;
+			@extend #main;
+			
 			a {
 				font-size: 13px;
 			}
@@ -32,13 +31,14 @@ form#search {
 	}
 }
 span {
-	&#search {
-		cursor: pointer;
+	&#s{
 		display: inline-block;
 		position: relative;
 		text-indent: -99999px;
 		width: 25px;
 		height: 22px;
+		cursor: pointer;
+
 		&:before {
 			content: "s";
 			position: absolute;
@@ -46,6 +46,7 @@ span {
 			left: 0;
 			width: 25px;
 			height: 22px;
+
 			font-family: $symbol;
 			font-size: 16px;
 			line-height: 22px;
@@ -61,13 +62,14 @@ span {
 
 // =Content
 ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-
 	&.items{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
 		a {
 			text-decoration: none;
+
 			time {
 				font-size: 12px;
 			}
@@ -85,12 +87,14 @@ ul {
 // =Footer
 #bottom {
 	ul {
-		list-style: none;
 		padding: 0;
 		margin: 0;
 		font-size: 0;
+		list-style: none;
+
 		li {
 			display: inline-block;
+
 			a {
 				font-size: 13px;
 			}

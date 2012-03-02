@@ -26,38 +26,39 @@ $sans: sans-serif;
 $symbol: 'FontomasCustomRegular', Arial, sans-serif;
 
 
+@mixin background-clip($clip: padding-box){
+	-webkit-background-clip: $clip;
+	-moz-background-clip: $clip;
+	background-clip: $clip;
+}
 
 @mixin border($width: 1px, $style: solid, $color: $color-1 ){
 	border: $width $style $color;
 }
 
-@mixin borderSide($side: top, $width: 1px, $style: solid, $color: $color-1){
+@mixin border-side($side: top, $width: 1px, $style: solid, $color: $color-1){
 	border-#{$side}: $width $style $color;
 }
 
-@mixin borderRadius($radius: 6px){
+@mixin border-radius($radius: 3px){
 	-webkit-border-radius: $radius;
 	-moz-border-radius: $radius;
 	border-radius: $radius;
 
-// Keeps the background color from leaking outside a border (Deserving of its own mixin? Hrmmmmm)
-	-moz-background-clip: padding;
-	-webkit-background-clip: padding-box;
-	background-clip: padding-box;
+	// Keeps the background color from leaking outside a border
+	@include background-clip();
 }
 
-@mixin borderRadiusSide($leftRight, $topBottom, $radius: 6px){
+@mixin border-radius-side($leftRight, $topBottom, $radius: 3px){
 	-webkit-border-#{$topBottom}-#{$leftRight}-radius: $radius;
 	-moz-border-radius-#{$topBottom}#{$leftRight}: $radius;
 	border-#{$topBottom}-#{$leftRight}-radius: $radius;
 
-// Keeps the background color from leaking outside a border (Deserving of its own mixin? Hrmmmmm)
-	-moz-background-clip: padding;
-	-webkit-background-clip: padding-box;
-	background-clip: padding-box;
+	// Keeps the background color from leaking outside a border
+	@include background-clip();
 }
 
-@mixin boxGradient($start: $bg-color-1,$end: $bg-color-4){
+@mixin gradient($start: $bg-color-1,$end: $bg-color-4){
 	background-color: $start;
 	background-image: -webkit-gradient(linear, left top, left bottom, from($start),to($end));
 	background-image: -webkit-linear-gradient(top, $start, $end);
@@ -68,21 +69,21 @@ $symbol: 'FontomasCustomRegular', Arial, sans-serif;
 	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='$start', EndColorStr='$end');
 }
 
-@mixin boxShadow($x-offset: 0px, $y-offset: 0px, $blur: 0px, $spread: 0px, $color: #FFF){
-
+@mixin box-shadow($x-offset: 0px, $y-offset: 0px, $blur: 0px, $spread: 0px, $color: #FFF){
 	-webkit-box-shadow: $x-offset $y-offset $blur $spread $color;
 	-moz-box-shadow: $x-offset $y-offset $blur $spread $color;
 	box-shadow: $x-offset $y-offset $blur $spread $color;
 }
 
-@mixin boxSizing($box: border-box) {
+@mixin box-sizing($box: border-box) {
 	// Paul Irish box sizing
 	-webkit-box-sizing: $box;
 	-moz-box-sizing: $box;
+	-ms-box-sizing: $box;
 	box-sizing: $box;
 }
 
-@mixin columns($col-count: 2, $col-gap: 20px, $col-rule-color: $color-1, $col-rule-style: none, $col-rule-width: 1px){
+@mixin column($col-count: 2, $col-gap: 20px){
 	// Ignored in ie9 and earlier
 	-webkit-column-count: $col-count;
 	-moz-column-count: $col-count;
@@ -91,23 +92,27 @@ $symbol: 'FontomasCustomRegular', Arial, sans-serif;
 	-webkit-column-gap: $col-gap;
 	-moz-column-gap: $col-gap;
 	column-gap: $col-gap;
+}
 
-	-webkit-column-rule-color: $col-rule-color;
-	-moz-column-rule-color: $col-rule-color;
-	column-rule-color: $col-rule-color;
+@mixin column-rule($col-rule-width: 1px, $col-rule-style: solid, $col-rule-color: $color-1){
+	// Ignored in ie9 and earlier
+	-webkit-column-rule-width: $col-rule-width;
+	-moz-column-rule-width: $col-rule-width;
+	column-rule-width: $col-rule-width;
 
 	-webkit-column-rule-style: $col-rule-style;
 	-moz-column-rule-style: $col-rule-style;
 	column-rule-style: $col-rule-style;
-	
-	-webkit-column-rule-width: $col-rule-width;
-	-moz-column-rule-width: $col-rule-width;
-	column-rule-width: $col-rule-width;
+
+	-webkit-column-rule-color: $col-rule-color;
+	-moz-column-rule-color: $col-rule-color;
+	column-rule-color: $col-rule-color;
 }
 
 @mixin opacity($opacity: 1){
-	opacity: $opacity;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$opacity*100})";
 	filter: alpha(opacity=$opacity*100);
+	opacity: $opacity;
 }
 
 @mixin selection($background: $s-color-1, $color: $s-color-2, $text-shadow: none ) {
@@ -130,6 +135,10 @@ $symbol: 'FontomasCustomRegular', Arial, sans-serif;
 	-ms-transition: $property $duration $timing $delay;
 	-o-transition: $property $duration $timing $delay;
 	transition: $property $duration $timing $delay;
+}
+
+@mixin white-space(){
+	//Need to do a little research before writing this one
 }
 
 // There has to be a better place for this

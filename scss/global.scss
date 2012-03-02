@@ -1,36 +1,35 @@
 @include selection();
 body {
 	background: $bg-color-1;
-	// I'm not sure this is needed. It is a band-aid for a slight scroll issue.
-	overflow-x: hidden;
 }
 
 
 // =Links
-a {
+a{
 	color: $a-color-1;
-}
-a:visited {
-	color: $a-color-3;
-}
-a:hover {
-	color: $a-color-2;
-}
-a:focus {
-	outline: thin dotted;
+
+	&:visited {
+		color: $a-color-3;
+	}
+	&:hover {
+		color: $a-color-2;
+	}
+	&:focus {
+		outline: thin dotted;
+	}
 }
 a,
 a:visited,
 a:hover,
 a:focus {
 	// I'm not sure why the visited links aren't transitioning in Chrome
-	@include transition(color, .2s)
+	@include transition(color, .2s);
 }
 
 
 // =Typography
 abbr[title] {
-	@include borderSide(bottom, 1px, dotted);
+	@include border-side(bottom, 1px, dotted);
 }
 b, strong {
 	font-weight: $bold;
@@ -45,9 +44,8 @@ hr {
 	display: block;
 	height: 1px;
 	border: 0;
-	@include borderSide();
+	@include border-side();
 	margin: 1 em 0;
-	padding: 0;
 }
 ins {
 	background: $bg-color-2;
@@ -108,8 +106,6 @@ dd {
 nav ul, nav ol {
 	list-style: none;
 	list-style-image: none;
-	margin: 0;
-	padding: 0;
 }
 
 
@@ -127,18 +123,14 @@ svg:not(:root) {
 
 // =Figures
 figure {
-	margin: 0;
 }
 
 
 // =Forms 
 form {
-	margin: 0;
 }
 fieldset {
 	border: 0;
-	margin: 0;
-	padding: 0;
 }
 label {
 	cursor: pointer;
@@ -146,12 +138,10 @@ label {
 legend {
 	border: 0;
 	*margin-left: -7px;
-	padding: 0;
 	white-space: normal;
 }
 button, input, select, textarea {
 	font-size: 100%;
-	margin: 0;
 	vertical-align: baseline;
 	*vertical-align: middle;
 }
@@ -171,8 +161,7 @@ input[disabled] {
 }
 input[type="checkbox"],
 input[type="radio"] {
-	box-sizing: border-box;
-	padding: 0;
+	@include box-sizing();
 	*width: 13px;
 	*height: 13px;
 }
@@ -187,7 +176,6 @@ input[type="search"]::-webkit-search-cancel-button {
 button::-moz-focus-inner,
 input::-moz-focus-inner {
 	border: 0;
-	padding: 0;
 }
 button {
 	padding: 8px 16px;
