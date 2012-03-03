@@ -261,7 +261,7 @@ span#s {
     color: #999999;
     text-indent: 0;
     text-align: center; }
-span#search.close:before {
+span#s.close:before {
   content: "x"; }
 
 ul.items {

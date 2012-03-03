@@ -69,10 +69,45 @@ $symbol: 'FontomasCustomRegular', Arial, sans-serif;
 	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='$start', EndColorStr='$end');
 }
 
-@mixin box-shadow($x-offset: 0px, $y-offset: 0px, $blur: 0px, $spread: 0px, $color: #FFF){
-	-webkit-box-shadow: $x-offset $y-offset $blur $spread $color;
-	-moz-box-shadow: $x-offset $y-offset $blur $spread $color;
-	box-shadow: $x-offset $y-offset $blur $spread $color;
+@mixin box-shadow($shadow-1, $shadow-2: false, $shadow-3: false, $shadow-4: false, $shadow-5: false, $shadow-6: false, $shadow-7: false, $shadow-8: false, $shadow-9: false){
+	//I'm sure there is a shorter way to write this, but it allows for multiple shadows
+	@if $shadow-2 == false {
+		-webkit-box-shadow: $shadow-1;
+		-moz-box-shadow: $shadow-1;
+		box-shadow: $shadow-1;
+	} @else if $shadow-3 == false {
+		-webkit-box-shadow: $shadow-1, $shadow-2;
+		-moz-box-shadow: $shadow-1, $shadow-2;
+		box-shadow: $shadow-1, $shadow-2;
+	} @else if $shadow-4 == false {
+		-webkit-box-shadow: $shadow-1, $shadow-2, $shadow-3;
+		-moz-box-shadow: $shadow-1, $shadow-2, $shadow-3;
+		box-shadow: $shadow-1, $shadow-2, $shadow-3;
+	} @else if $shadow-5 == false {
+		-webkit-box-shadow: $shadow-1, $shadow-2, $shadow-3, $shadow-4;
+		-moz-box-shadow: $shadow-1, $shadow-2, $shadow-3, $shadow-4;
+		box-shadow: $shadow-1, $shadow-2, $shadow-3, $shadow-4;
+	} @else if $shadow-6 == false {
+		-webkit-box-shadow: $shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5;
+		-moz-box-shadow: $shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5;
+		box-shadow: $shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5;
+	} @else if $shadow-7 == false {
+		-webkit-box-shadow: $shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6;
+		-moz-box-shadow: $shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6;
+		box-shadow: $shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6;
+	} @else if $shadow-8 == false {
+		-webkit-box-shadow: $shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7;
+		-moz-box-shadow: $shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7;
+		box-shadow: $shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7;
+	} @else if $shadow-9 == false {
+		-webkit-box-shadow: $shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8;
+		-moz-box-shadow: $shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8;
+		box-shadow: $shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8;
+	} @else {
+		-webkit-box-shadow: $shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9;
+		-moz-box-shadow: $shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9;
+		box-shadow: $shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9;
+	}
 }
 
 @mixin box-sizing($box: border-box) {
