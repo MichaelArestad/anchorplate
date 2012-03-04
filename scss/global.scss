@@ -23,7 +23,7 @@ a:visited,
 a:hover,
 a:focus {
 	// I'm not sure why the visited links aren't transitioning in Chrome
-	@include transition(color, .2s);
+	@include transition(color .2s);
 }
 
 
