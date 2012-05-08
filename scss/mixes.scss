@@ -66,7 +66,7 @@ $symbol: 'FontomasCustomRegular', Arial, sans-serif;
 	background-image: -o-linear-gradient(top, $start, $end);
 	background-image: -ms-linear-gradient(top, $start, $end);
 	background-image: linear-gradient(top, $start, $end);
-	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='$start', EndColorStr='$end');
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$start}', EndColorStr='${$end}');
 }
 
 @mixin box-shadow($shadow-1, $shadow-2: false, $shadow-3: false, $shadow-4: false, $shadow-5: false, $shadow-6: false, $shadow-7: false, $shadow-8: false, $shadow-9: false){
